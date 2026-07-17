@@ -1,0 +1,90 @@
+.lab { background: #f7f5ee; color: #241916; overflow: clip; }
+.demo { min-height: 100svh; padding: clamp(72px, 9vw, 140px) clamp(24px, 7vw, 110px); position: relative; }
+.label { align-items: center; display: flex; font: 600 10px/1 Inter, sans-serif; gap: 10px; left: clamp(20px, 3vw, 46px); letter-spacing: .08em; position: absolute; text-transform: uppercase; top: 26px; z-index: 9; }
+.label span { border: 1px solid currentColor; border-radius: 50%; display: grid; height: 24px; place-items: center; width: 24px; }
+.kicker { font: 600 10px/1 Inter, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.sectionHeading h2, .editorial h2, .storyCopy h2, .productPanel h2 { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(3.5rem, 8vw, 8rem); font-weight: 400; line-height: .84; margin: 18px 0 0; }
+
+.ribbed { background: #b9b5aa url("/studio-woman.jpg") center / cover no-repeat; color: #f8f4e8; }
+.ribbed::after { background: rgba(26, 23, 20, .18); content: ""; inset: 0; position: absolute; }
+.ribbedScene { align-items: center; display: grid; grid-template-columns: .9fr 1.1fr; min-height: calc(100svh - clamp(144px, 18vw, 280px)); position: relative; z-index: 1; }
+.ribbedCopy { max-width: 560px; padding-right: 5vw; }
+.ribbedCopy h1 { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(4.3rem, 9vw, 9rem); font-weight: 400; line-height: .8; margin: 22px 0 34px; }
+.ribbedCopy > p:last-child { color: #efebcd; font-size: 15px; line-height: 1.5; max-width: 430px; }
+.ribbedGlass { align-self: stretch; backdrop-filter: blur(8px) contrast(1.08) saturate(.84); background: repeating-linear-gradient(90deg, rgba(255,255,255,.2) 0 5px, rgba(255,255,255,.03) 7px 15px, rgba(25,20,17,.08) 17px 19px, rgba(255,255,255,.08) 21px 27px); border-left: 1px solid rgba(255,255,255,.48); box-shadow: inset 16px 0 30px rgba(255,255,255,.08), -20px 0 50px rgba(25,20,17,.1); min-height: 72svh; transform: perspective(900px) rotateY(-2deg); }
+
+.glossy { align-items: center; background: #35302b url("/bags.jpg") center / cover no-repeat; color: white; display: flex; }
+.glossy::before { background: rgba(20,18,16,.28); content: ""; inset: 0; position: absolute; }
+.glossyGrid { display: grid; gap: 2px; grid-template-columns: repeat(3, 1fr); margin: auto; max-width: 1180px; position: relative; width: 100%; z-index: 1; }
+.glossPanel { backdrop-filter: blur(12px) saturate(.8); border: 1px solid rgba(255,255,255,.38); box-shadow: inset 1px 0 rgba(255,255,255,.6), 0 24px 50px rgba(18,15,13,.1); min-height: 450px; padding: clamp(28px, 4vw, 58px); position: relative; }
+.glossPanel::after { background: rgba(255,255,255,.42); content: ""; height: 58%; left: 0; opacity: .38; position: absolute; top: 12%; width: 1px; }
+.glossPanel > span { font: 500 10px Inter, sans-serif; letter-spacing: .1em; }
+.glossPanel h2 { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(2.6rem, 4vw, 4.8rem); font-weight: 400; line-height: .9; margin: 120px 0 22px; }
+.glossPanel p { color: rgba(255,255,255,.82); font-size: 14px; line-height: 1.5; }
+.glossLow { background: rgba(255,255,255,.08); }
+.glossMid { backdrop-filter: blur(19px) saturate(.78); background: rgba(255,255,255,.16); }
+.glossHigh { backdrop-filter: blur(28px) saturate(.62); background: rgba(239,235,205,.24); }
+
+.comparison { background: #c5bfb3 url("/notes.png") center / cover no-repeat; }
+.comparison::before { background: rgba(247,245,238,.15); content: ""; inset: 0; position: absolute; }
+.sectionHeading { margin: 0 auto 7vw; max-width: 1180px; position: relative; }
+.compareGrid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); margin: auto; max-width: 1180px; position: relative; }
+.compareCard { border: 1px solid rgba(255,255,255,.65); min-height: 330px; padding: 30px; }
+.compareCard > span { font: 600 10px Inter, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+.compareCard h3 { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(2.6rem, 4vw, 4.4rem); font-weight: 400; margin: 130px 0 14px; }
+.compareCard p { font-size: 13px; line-height: 1.45; max-width: 250px; }
+.clear { backdrop-filter: blur(2px); background: rgba(255,255,255,.08); }
+.frosted { backdrop-filter: blur(14px) saturate(.82); background: rgba(255,255,255,.28); }
+.blurred { backdrop-filter: blur(30px) saturate(.55); background: rgba(255,255,255,.48); }
+
+.editorial { background: #55504a url("/web-design.jpg") center / cover no-repeat; color: #fff; }
+.editorial::before { background: rgba(36,25,22,.32); content: ""; inset: 0; position: absolute; }
+.editorialLayout { align-items: end; display: grid; gap: 8vw; grid-template-columns: .8fr 1.2fr; min-height: calc(100svh - clamp(144px, 18vw, 280px)); position: relative; }
+.editorialLayout > header { max-width: 540px; }
+.editorialLayout > header > p:last-child { color: #efebcd; line-height: 1.5; margin-top: 32px; max-width: 420px; }
+.editorialCards { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
+.editorialCards article { backdrop-filter: blur(14px) saturate(.85); background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.52); box-shadow: inset 1px 1px rgba(255,255,255,.3); min-height: 310px; padding: 28px; }
+.editorialCards span { font: 600 9px Inter, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+.editorialCards h3 { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(2.4rem, 4vw, 4rem); font-weight: 400; margin: 120px 0 15px; }
+.editorialCards p { color: rgba(255,255,255,.82); font-size: 13px; line-height: 1.4; }
+
+.amber { align-items: center; background: #8e684d url("/studio-woman.jpg") center / cover no-repeat; color: #fff8eb; display: flex; justify-content: center; }
+.amber::before { backdrop-filter: blur(24px) saturate(.72); background: rgba(103,62,34,.46); content: ""; inset: 0; position: absolute; }
+.amber::after { background-image: radial-gradient(rgba(255,255,255,.2) .5px, transparent .7px); background-size: 4px 4px; content: ""; inset: 0; mix-blend-mode: soft-light; opacity: .46; position: absolute; }
+.storyPhone { border: 1px solid rgba(255,245,222,.46); height: min(80svh, 760px); max-width: 430px; overflow: hidden; padding: 28px; position: relative; width: min(92vw, 430px); z-index: 1; }
+.storyTop { display: flex; font: 500 10px Inter, sans-serif; justify-content: space-between; letter-spacing: .08em; text-transform: uppercase; }
+.storyCopy { margin-top: 18svh; }
+.storyCopy h2 { font-size: clamp(3.6rem, 13vw, 5.8rem); }
+.storyGlass { backdrop-filter: blur(16px); background: rgba(255,238,211,.13); border: 1px solid rgba(255,245,222,.52); bottom: 28px; left: 28px; padding: 22px; position: absolute; right: 28px; }
+.storyGlass span { font: 600 9px Inter, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+.storyGlass p { font-size: 13px; line-height: 1.5; margin-top: 14px; }
+
+.product { background: #d6d0c4; }
+.productStage { background: #aaa395 url("/bags.jpg") center / cover no-repeat; min-height: min(76svh, 760px); position: relative; }
+.productPanel { backdrop-filter: blur(18px) saturate(.76); background: rgba(247,245,238,.38); border: 1px solid rgba(255,255,255,.72); bottom: clamp(20px, 4vw, 58px); max-width: 520px; padding: clamp(28px, 4vw, 58px); position: absolute; right: clamp(20px, 4vw, 58px); }
+.productPanel h2 { font-size: clamp(3.2rem, 6vw, 6.2rem); margin-bottom: 28px; }
+.productPanel > p:not(.kicker) { font-size: 14px; line-height: 1.5; max-width: 380px; }
+.productPanel button { background: #241916; border: 1px solid #241916; color: #f7f5ee; cursor: pointer; font: 600 10px Inter, sans-serif; margin-top: 28px; padding: 14px 20px; text-transform: uppercase; }
+.productPanel button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+@media (max-width: 760px) {
+  .demo { min-height: 100svh; padding: 100px 20px 60px; }
+  .ribbedScene, .editorialLayout { grid-template-columns: 1fr; }
+  .ribbedCopy { padding: 8vh 0 5vh; }
+  .ribbedGlass { min-height: 42svh; transform: none; }
+  .glossyGrid, .compareGrid { grid-template-columns: 1fr; }
+  .glossy { display: block; }
+  .glossPanel { min-height: 280px; }
+  .glossPanel h2, .compareCard h3 { margin-top: 70px; }
+  .sectionHeading { margin-bottom: 48px; }
+  .editorialLayout { align-content: end; }
+  .editorialCards { grid-template-columns: 1fr; }
+  .editorialCards article { min-height: 250px; }
+  .editorialCards h3 { margin-top: 70px; }
+  .productStage { min-height: 76svh; }
+  .productPanel { bottom: 16px; left: 16px; right: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ribbedGlass, .glossPanel, .compareCard, .editorialCards article, .storyGlass, .productPanel { scroll-behavior: auto; transition: none; }
+}
