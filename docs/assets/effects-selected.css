@@ -1,0 +1,461 @@
+.ponto-effects {
+  --effects-ink: #241916;
+  --effects-paper: #f7f5ee;
+  --effects-butter: #f9e79f;
+  --effects-cream: #efebcd;
+  background: var(--effects-paper);
+  color: var(--effects-ink);
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  overflow: clip;
+  position: relative;
+}
+
+.ponto-effects *,
+.ponto-effects *::before,
+.ponto-effects *::after {
+  box-sizing: border-box;
+}
+
+.ponto-effects h2,
+.ponto-effects p {
+  margin: 0;
+}
+
+.ponto-effects h2 {
+  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.ponto-effects .effects-section-tag {
+  font-size: 10px;
+  font-weight: 700;
+  left: 24px;
+  letter-spacing: .08em;
+  position: absolute;
+  text-transform: uppercase;
+  top: 22px;
+  z-index: 12;
+}
+
+.ponto-effects .effects-section-tag--light {
+  color: var(--effects-cream);
+}
+
+.ponto-effects .effects-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.ponto-effects .effects-reveal {
+  opacity: 0;
+  transform: translateY(42px);
+  transition: opacity .72s ease, transform .72s ease;
+}
+
+.ponto-effects .effects-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ponto-effects .effects-frosted {
+  --cursor-x: 50%;
+  --cursor-y: 50%;
+  align-items: flex-end;
+  background: #777 url("./effects-bags.jpg") center 52% / cover no-repeat;
+  color: var(--effects-cream);
+  display: flex;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: 10vw 12vw;
+  position: relative;
+}
+
+.ponto-effects .effects-frosted::before {
+  background: url("./effects-bags.jpg") center 52% / cover no-repeat;
+  content: "";
+  filter: blur(18px) saturate(.68);
+  inset: -20px;
+  mask-image: radial-gradient(circle 205px at var(--cursor-x) var(--cursor-y), transparent 0 58%, #000 74%);
+  position: absolute;
+  transform: scale(1.035);
+  -webkit-mask-image: radial-gradient(circle 205px at var(--cursor-x) var(--cursor-y), transparent 0 58%, #000 74%);
+}
+
+.ponto-effects .effects-frosted::after {
+  background: rgba(27, 24, 19, .24);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.ponto-effects .effects-frosted-content {
+  max-width: 620px;
+  position: relative;
+  z-index: 2;
+}
+
+.ponto-effects .effects-frosted-content h2 {
+  color: var(--effects-butter);
+  font-size: clamp(3.4rem, 7vw, 7.2rem);
+  line-height: .84;
+  margin: 20px 0 32px;
+}
+
+.ponto-effects .effects-frosted-content > p:last-child {
+  color: var(--effects-cream);
+  line-height: 1.35;
+  max-width: 480px;
+}
+
+.ponto-effects .effects-embossed {
+  align-items: center;
+  background-color: #e8e3d7;
+  background-image: radial-gradient(rgba(83, 72, 55, .07) .55px, transparent .7px), linear-gradient(105deg, rgba(255,255,255,.3), transparent 48%, rgba(92,77,56,.08));
+  background-size: 4px 4px, 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: 12vw 8vw;
+  position: relative;
+}
+
+.ponto-effects .effects-embossed::after {
+  background: repeating-radial-gradient(ellipse at 30% 40%, transparent 0 3px, rgba(72, 61, 43, .025) 4px 5px);
+  content: "";
+  inset: 0;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  position: absolute;
+}
+
+.ponto-effects .effects-embossed-mark {
+  color: #e3ded2;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(6rem, 20vw, 19rem);
+  line-height: .75;
+  position: relative;
+  text-shadow: -1px -1px 1px rgba(255,255,255,.95), 1px 1px 1px rgba(72,61,45,.52), 2px 2px 3px rgba(72,61,45,.22);
+  z-index: 1;
+}
+
+.ponto-effects .effects-embossed-mark--life {
+  font-size: 60px;
+  line-height: .98;
+}
+
+.ponto-effects .effects-embossed--inset,
+.ponto-effects .effects-embossed--inset .effects-embossed-mark {
+  background-image: none;
+}
+
+.ponto-effects .effects-embossed--inset::after {
+  display: none;
+}
+
+.ponto-effects .effects-embossed--inset .effects-embossed-mark {
+  color: #e8e3d7;
+  text-shadow: 1px 1px 1px rgba(255,255,255,.95), -1px -1px 1px rgba(72,61,45,.58), -2px -2px 3px rgba(72,61,45,.2);
+}
+
+.ponto-effects .effects-embossed-caption {
+  color: rgba(67, 57, 43, .62);
+  font-size: 12px;
+  margin-top: 46px;
+  position: relative;
+  z-index: 1;
+}
+
+.ponto-effects .effects-rings-divider {
+  background: transparent;
+  height: 0;
+  overflow: visible;
+  position: relative;
+  z-index: 20;
+}
+
+.ponto-effects .effects-rings-divider img {
+  height: auto;
+  left: 50%;
+  max-width: none;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+}
+
+.ponto-effects .effects-notebook {
+  background: #e8e3d7;
+  height: 100svh;
+  min-height: 720px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ponto-effects .effects-notebook-page {
+  display: grid;
+  grid-template-columns: minmax(270px, 46vw) 1fr;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.ponto-effects .effects-binder-column {
+  background: #e8e3d7 url("./effects-binder-transparent.png") left center / auto 100% no-repeat;
+  min-width: 0;
+}
+
+.ponto-effects .effects-binder-plain {
+  background: #e8e3d7;
+}
+
+.ponto-effects .effects-fragment-sequence {
+  background: var(--effects-paper);
+  position: relative;
+}
+
+.ponto-effects .effects-fragment-source-stage {
+  height: 155svh;
+  position: relative;
+}
+
+.ponto-effects .effects-fragment-source {
+  background: #b4ad9d url("./effects-picote.webp") center 52% / cover no-repeat;
+  height: 100svh;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+}
+
+.ponto-effects .effects-fragment-copy {
+  left: 50%;
+  max-width: min(720px, calc(100% - 64px));
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.ponto-effects .effects-fragment-copy::before {
+  background: radial-gradient(ellipse at center, rgba(24, 17, 13, .48) 0%, rgba(24, 17, 13, .24) 42%, transparent 76%);
+  content: "";
+  inset: -72px -96px;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.ponto-effects .effects-fragment-copy h2 {
+  color: #F9E79F;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 75px;
+  font-weight: 400;
+  line-height: .98;
+  margin: 0;
+}
+
+.ponto-effects .effects-fragment-copy p {
+  color: #EFEBCD;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.38;
+  margin: 24px 0 0;
+}
+
+.ponto-effects .effects-fragment-hole {
+  animation: effects-punch-in .16s ease-out forwards;
+  background: var(--effects-paper);
+  border-radius: 50%;
+  position: absolute;
+  transform: scale(0);
+}
+
+.ponto-effects .effects-fragment-landing {
+  align-items: center;
+  background-color: #e8e3d7;
+  background-image: radial-gradient(rgba(83,72,55,.07) .55px, transparent .7px), linear-gradient(105deg, rgba(255,255,255,.3), transparent 48%, rgba(92,77,56,.08));
+  background-size: 4px 4px, 100% 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 100svh;
+  overflow: hidden;
+  position: relative;
+}
+
+.ponto-effects .effects-fragment-emboss {
+  color: #e3ded2;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 75px;
+  line-height: .98;
+  max-width: min(720px, calc(100% - 64px));
+  position: relative;
+  text-align: center;
+  text-shadow: -1px -1px 1px rgba(255,255,255,.95), 1px 1px 1px rgba(72,61,45,.52), 2px 2px 3px rgba(72,61,45,.22);
+  transition: color 1.8s linear, text-shadow 1.8s linear;
+  z-index: 0;
+}
+
+.ponto-effects .effects-fragment-landing--falling .effects-fragment-emboss {
+  color: #292625;
+  text-shadow: -1px -1px 1px rgba(255,255,255,.18), 1px 1px 2px rgba(0,0,0,.8);
+}
+
+.ponto-effects .effects-fragment-piece {
+  background-image: url("./effects-picote.webp");
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  will-change: transform;
+  z-index: 1;
+}
+
+.ponto-effects .effects-questions {
+  background: #e8e3d7;
+  isolation: isolate;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: clamp(130px, 13vw, 210px) 5vw;
+  position: relative;
+}
+
+.ponto-effects .effects-questions::before {
+  background-image: radial-gradient(rgba(83,72,55,.16) .55px, transparent .75px), radial-gradient(rgba(255,255,255,.38) .5px, transparent .7px);
+  background-position: 0 0, 2px 3px;
+  background-size: 4px 4px, 5px 5px;
+  content: "";
+  inset: 0;
+  opacity: .78;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.ponto-effects .effects-questions-paper {
+  align-content: start;
+  aspect-ratio: 1 / 1.414;
+  background: #fff;
+  display: grid;
+  margin: auto;
+  max-width: 780px;
+  min-height: 980px;
+  padding: clamp(80px, 8vw, 120px) clamp(38px, 7vw, 86px);
+  position: relative;
+  z-index: 1;
+}
+
+.ponto-effects .effects-questions-clip {
+  filter: drop-shadow(8px 15px 10px rgba(36,25,22,.25));
+  height: auto;
+  left: 50%;
+  position: absolute;
+  top: clamp(12px, 4vw, 65px);
+  transform: translateX(-50%);
+  width: clamp(190px, 22vw, 320px);
+  z-index: 4;
+}
+
+.ponto-effects .effects-questions-heading {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.ponto-effects .effects-questions-heading h2 {
+  color: var(--effects-ink);
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(3rem, 6vw, 6.6rem);
+  font-weight: 400;
+  line-height: .84;
+  margin: 16px 0 0;
+}
+
+.ponto-effects .effects-questions-heading strong {
+  font-style: italic;
+  font-weight: 400;
+}
+
+@keyframes effects-punch-in {
+  to { transform: scale(1); }
+}
+
+@media (max-width: 900px) {
+  .ponto-effects .effects-frosted {
+    min-height: 85svh;
+    padding: 24vw 8vw 14vw !important;
+  }
+
+  .ponto-effects .effects-frosted-content h2 {
+    font-size: clamp(3.4rem, 16vw, 7.2rem) !important;
+  }
+
+  .ponto-effects .effects-frosted::before {
+    mask-image: radial-gradient(circle 132px at var(--cursor-x) var(--cursor-y), transparent 0 58%, #000 76%);
+    -webkit-mask-image: radial-gradient(circle 132px at var(--cursor-x) var(--cursor-y), transparent 0 58%, #000 76%);
+  }
+
+  .ponto-effects .effects-embossed {
+    padding: 12vw 8vw !important;
+  }
+
+  .ponto-effects .effects-embossed-mark {
+    font-size: 53px;
+  }
+
+  .ponto-effects .effects-fragment-emboss {
+    font-size: 75px;
+  }
+
+  .ponto-effects .effects-rings-divider img {
+    width: 170vw;
+  }
+
+  .ponto-effects .effects-notebook {
+    min-height: 620px;
+    padding: 0 !important;
+  }
+
+  .ponto-effects .effects-notebook-page {
+    grid-template-columns: 54vw 1fr;
+  }
+
+  .ponto-effects .effects-fragment-source-stage,
+  .ponto-effects .effects-fragment-landing {
+    padding: 0 !important;
+  }
+
+  .ponto-effects .effects-fragment-copy {
+    max-width: calc(100% - 40px);
+  }
+
+  .ponto-effects .effects-questions-paper {
+    aspect-ratio: auto;
+    min-height: 1120px;
+  }
+
+  .ponto-effects .effects-fragment-copy h2 {
+    font-size: 75px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ponto-effects .effects-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .ponto-effects .effects-embossed-mark--life {
+    font-size: 60px;
+  }
+}
