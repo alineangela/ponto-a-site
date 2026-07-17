@@ -42,6 +42,28 @@
   color: var(--effects-cream);
 }
 
+.site-numbered-section {
+  position: relative;
+}
+
+.site-section-tag {
+  color: #211D18;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  left: 24px;
+  letter-spacing: .08em;
+  margin: 0;
+  position: absolute;
+  text-transform: uppercase;
+  top: 22px;
+  z-index: 12;
+}
+
+.site-section-tag--light {
+  color: #efebcd;
+}
+
 .ponto-effects .effects-eyebrow {
   font-size: 11px;
   font-weight: 700;
@@ -328,14 +350,18 @@
 }
 
 .ponto-effects .effects-questions::before {
-  background-image: radial-gradient(rgba(83,72,55,.16) .55px, transparent .75px), radial-gradient(rgba(255,255,255,.38) .5px, transparent .7px);
-  background-position: 0 0, 2px 3px;
-  background-size: 4px 4px, 5px 5px;
-  content: "";
+  content: none;
+}
+
+.ponto-effects .effects-questions-grain {
+  height: 100%;
+  image-rendering: auto;
   inset: 0;
-  opacity: .78;
+  mix-blend-mode: multiply;
+  opacity: .32;
   pointer-events: none;
   position: absolute;
+  width: 100%;
   z-index: 0;
 }
 

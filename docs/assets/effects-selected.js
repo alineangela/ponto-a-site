@@ -22,7 +22,66 @@
       });
     }
 
+    initQuestionsGrain(root);
     initFragmentRain(root);
+  }
+
+  function initQuestionsGrain(root) {
+    var section = root.querySelector(".effects-questions");
+    var canvas = section && section.querySelector(".effects-questions-grain");
+    if (!section || !canvas || canvas.dataset.grainReady === "true") return;
+    canvas.dataset.grainReady = "true";
+
+    var context = canvas.getContext("2d", { alpha: true });
+    if (!context) return;
+    var timer = 0;
+
+    function paint() {
+      var bounds = section.getBoundingClientRect();
+      var scale = Math.min(window.devicePixelRatio || 1, 1.25);
+      var width = Math.max(1, Math.ceil(bounds.width * scale));
+      var height = Math.max(1, Math.ceil(bounds.height * scale));
+      if (canvas.width !== width || canvas.height !== height) {
+        canvas.width = width;
+        canvas.height = height;
+      }
+      var image = context.createImageData(width, height);
+      for (var pixel = 0; pixel < image.data.length; pixel += 4) {
+        var tone = Math.random() < 0.72 ? 0 : Math.random() * 110;
+        image.data[pixel] = tone;
+        image.data[pixel + 1] = tone;
+        image.data[pixel + 2] = tone;
+        image.data[pixel + 3] = 105;
+      }
+      context.putImageData(image, 0, 0);
+    }
+
+    function start() {
+      if (timer) return;
+      paint();
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        timer = window.setInterval(paint, 85);
+      }
+    }
+
+    function stop() {
+      if (!timer) return;
+      window.clearInterval(timer);
+      timer = 0;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) start();
+      else stop();
+    }, { threshold: 0 });
+
+    observer.observe(section);
+    window.addEventListener("resize", paint);
+    window.addEventListener("pagehide", function cleanup() {
+      stop();
+      observer.disconnect();
+      window.removeEventListener("resize", paint);
+    }, { once: true });
   }
 
   function initFragmentRain(root) {
