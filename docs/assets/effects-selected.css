@@ -167,7 +167,7 @@
 }
 
 .ponto-effects .effects-embossed-mark--life {
-  font-size: 60px;
+  font-size: 115px;
   line-height: .98;
 }
 
@@ -482,6 +482,6 @@
 
 @media (max-width: 720px) {
   .ponto-effects .effects-embossed-mark--life {
-    font-size: 60px;
+    font-size: min(115px, 28vw);
   }
 }

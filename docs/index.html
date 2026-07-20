@@ -7,7 +7,41 @@
 <title>Ponto A | Template Notion</title>
 <link rel="icon" type="image/webp" href="./assets/notion-icon.webp">
 <link rel="shortcut icon" type="image/webp" href="./assets/notion-icon.webp">
-<link rel="stylesheet" href="./assets/effects-selected.css?v=20260717-09">
+<link rel="stylesheet" href="./assets/effects-selected.css?v=20260717-10">
+<script>
+  (function () {
+    var key = "ponto-a-scroll-position";
+    var navigation = performance.getEntriesByType("navigation")[0];
+    var isReload = navigation ? navigation.type === "reload" : performance.navigation && performance.navigation.type === 1;
+
+    window.addEventListener("pagehide", function () {
+      try {
+        sessionStorage.setItem(key, String(window.scrollY));
+      } catch (error) {}
+    });
+
+    if (!isReload) return;
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
+    window.addEventListener("load", function () {
+      var saved;
+      try {
+        saved = Number(sessionStorage.getItem(key));
+      } catch (error) {
+        return;
+      }
+      if (!Number.isFinite(saved) || saved <= 0) return;
+
+      function restore() {
+        window.scrollTo(0, saved);
+      }
+
+      requestAnimationFrame(restore);
+      window.setTimeout(restore, 150);
+      window.setTimeout(restore, 500);
+    }, { once: true });
+  })();
+</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -364,7 +398,7 @@ class Component extends DCLogic {
 
     requestAnimationFrame(() => {
       loadScript('./assets/matter.min.js', 'matter')
-        .then(() => loadScript('./assets/effects-selected.js?v=20260717-05', 'selected'))
+        .then(() => loadScript('./assets/effects-selected.js?v=20260717-06', 'selected'))
         .catch((error) => console.error('[effects] failed to initialize', error));
     });
   }
