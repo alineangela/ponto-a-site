@@ -7,7 +7,7 @@
 <title>Ponto A | Template Notion</title>
 <link rel="icon" type="image/webp" href="./assets/notion-icon.webp">
 <link rel="shortcut icon" type="image/webp" href="./assets/notion-icon.webp">
-<link rel="stylesheet" href="./assets/effects-selected.css?v=20260717-08">
+<link rel="stylesheet" href="./assets/effects-selected.css?v=20260929-01">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -26,301 +26,493 @@
       .nav-links{display:none !important}
       .header-cta{display:none !important}
       .nav-toggle{display:flex !important}
-      .hero-grid{grid-template-columns:1fr !important;gap:32px !important;grid-auto-flow:dense !important}
-      .hero-img{order:-1}
-      .cmp-grid{grid-template-columns:1fr !important}
-      .diff-grid{grid-template-columns:1fr !important}
-      .emo-grid{grid-template-columns:1fr !important;gap:28px !important;grid-auto-flow:dense !important}
-      .emo-img{order:-1}
-      .feat-grid{grid-template-columns:1fr !important;grid-auto-flow:row !important;grid-template-rows:none !important}
-      .adhd-grid{grid-template-columns:1fr 1fr !important;gap:16px !important}
-      h1{font-size:clamp(38px,10vw,53px) !important}
-      h2{font-size:clamp(30px,7.5vw,42px) !important}
-      section, .final-section-pad{padding-top:56px !important;padding-bottom:56px !important}
-      #comparacao h2, .positioning-title{font-size:clamp(34px,9vw,42px) !important}
-      .emo-grid h2{text-align:center !important}
-      .feat-grid{gap:18px 20px !important}
-      .feat-item{padding-top:16px !important;padding-bottom:6px !important}
-      .feat-item + .feat-item{margin-top:6px !important}
-    }
-    @media (max-width: 520px) {
-      .adhd-grid{grid-template-columns:1fr !important}
     }
   </style>
+  <script src="image-slot.js"></script>
   <script>
     document.addEventListener('contextmenu',function(e){if(e.target&&e.target.tagName==='IMG')e.preventDefault();});
     document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName==='IMG')e.preventDefault();});
   </script>
 </helmet>
 
-<div style="font-family:Inter,system-ui,sans-serif;background:#F7F5F2;color:#211D18;min-height:100vh;-webkit-font-smoothing:antialiased">
+<div style="font-family:Inter,system-ui,sans-serif;background:#f7f5ee;color:#241916;min-height:100vh;-webkit-font-smoothing:antialiased">
 
   <header style="position:sticky;top:0;z-index:50;background:rgba(247,245,242,0.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(33,29,24,0.08)">
     <nav style="max-width:1120px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;gap:24px">
-      <a href="#topo" style="display:flex;align-items:center;gap:10px;color:#211D18;font-weight:800;letter-spacing:-0.02em">
+      <a href="#topo" style="display:flex;align-items:center;gap:10px;color:#241916;font-weight:800;letter-spacing:-0.02em">
         <img src="assets/notion-icon.webp" width="30" height="30" alt="" style="display:block">
         Ponto A
       </a>
-      <div class="nav-links" style="margin-left:auto;display:flex;align-items:center;gap:26px;font-size:14px;font-weight:500;color:#5C544B">
-        <a href="#comparacao" style="color:inherit;transition:color 0.2s ease" style-hover="color:#3F5A38 !important">Diferenciais</a>
-        <a href="#incluso" style="color:inherit;transition:color 0.2s ease" style-hover="color:#3F5A38 !important">Estrutura</a>
-        <a href="#avaliacoes" style="color:inherit;transition:color 0.2s ease" style-hover="color:#3F5A38 !important">Avaliações</a>
-        <a href="#tdah" style="color:inherit;transition:color 0.2s ease" style-hover="color:#3F5A38 !important">TDAH</a>
-        <a href="/blog/" style="color:inherit;transition:color 0.2s ease" style-hover="color:#3F5A38 !important">Blog</a>
+      <div class="nav-links" style="margin-left:auto;display:flex;align-items:center;gap:26px;font-size:14px;font-weight:500;color:#4a433b">
+        <a href="#comparacao" style="color:inherit;transition:color 0.2s ease" style-hover="color:#241916 !important">Diferenciais</a>
+        <a href="#incluso" style="color:inherit;transition:color 0.2s ease" style-hover="color:#241916 !important">Estrutura</a>
+        <a href="#avaliacoes" style="color:inherit;transition:color 0.2s ease" style-hover="color:#241916 !important">Avaliações</a>
+        <a href="#tdah" style="color:inherit;transition:color 0.2s ease" style-hover="color:#241916 !important">TDAH</a>
+        <a href="/blog/" style="color:inherit;transition:color 0.2s ease" style-hover="color:#241916 !important">Blog</a>
       </div>
-      <a class="header-cta" href="https://pay.hotmart.com/C104031853M?bid=1782967228079" style="background:#211D18;color:#F7F5F2;font-size:14px;font-weight:600;padding:11px 20px;border-radius:999px;display:inline-block;transition:transform 0.2s ease,box-shadow 0.2s ease" style-hover="transform:scale(1.06) translateY(-2px);box-shadow:0 10px 20px -8px rgba(33,29,24,0.45)">Quero meu planner</a>
-      <button class="nav-toggle" type="button" onClick="{{ toggleMenu }}" aria-label="Abrir menu" style="display:none;margin-left:auto;background:none;border:1px solid rgba(33,29,24,0.2);border-radius:10px;width:40px;height:40px;align-items:center;justify-content:center;font-size:18px;color:#211D18;cursor:pointer">{{ menuSign }}</button>
+      <a class="header-cta" href="https://pay.hotmart.com/C104031853M?bid=1782967228079" style="background:#241916;color:#f7f5ee;font-size:14px;font-weight:600;padding:11px 20px;border-radius:999px;display:inline-block;transition:transform 0.2s ease,box-shadow 0.2s ease" style-hover="transform:scale(1.06) translateY(-2px);box-shadow:0 10px 20px -8px rgba(33,29,24,0.45)">Quero meu planner</a>
+      <button class="nav-toggle" type="button" onClick="{{ toggleMenu }}" aria-label="Abrir menu" style="display:none;margin-left:auto;background:none;border:1px solid rgba(33,29,24,0.2);border-radius:10px;width:40px;height:40px;align-items:center;justify-content:center;font-size:18px;color:#241916;cursor:pointer">{{ menuSign }}</button>
     </nav>
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
-      <div style="display:flex;flex-direction:column;padding:6px 24px 20px;gap:2px;border-top:1px solid rgba(33,29,24,0.08);background:#F7F5F2">
-        <a href="#comparacao" onClick="{{ closeMenu }}" style="color:#211D18;padding:14px 4px;font-size:15px;font-weight:600;border-bottom:1px solid rgba(33,29,24,0.07)">Diferenciais</a>
-        <a href="#incluso" onClick="{{ closeMenu }}" style="color:#211D18;padding:14px 4px;font-size:15px;font-weight:600;border-bottom:1px solid rgba(33,29,24,0.07)">Estrutura</a>
-        <a href="#avaliacoes" onClick="{{ closeMenu }}" style="color:#211D18;padding:14px 4px;font-size:15px;font-weight:600;border-bottom:1px solid rgba(33,29,24,0.07)">Avaliações</a>
-        <a href="#tdah" onClick="{{ closeMenu }}" style="color:#211D18;padding:14px 4px;font-size:15px;font-weight:600;border-bottom:1px solid rgba(33,29,24,0.07)">TDAH</a>
-        <a href="/blog/" onClick="{{ closeMenu }}" style="color:#211D18;padding:14px 4px;font-size:15px;font-weight:600;border-bottom:1px solid rgba(33,29,24,0.07)">Blog</a>
-        <a href="https://pay.hotmart.com/C104031853M?bid=1782967228079" style="margin-top:12px;background:#211D18;color:#F7F5F2;text-align:center;padding:15px;border-radius:12px;font-size:15px;font-weight:700">Quero meu planner</a>
+      <div style="display:flex;flex-direction:column;padding:6px 24px 20px;gap:2px;border-top:1px solid rgba(33,29,24,0.08);background:#f7f5ee">
+        <a href="#comparacao" onClick="{{ closeMenu }}" style="color:#241916;padding:14px 4px;font-size:15px;font-weight:600;border-bottom:1px solid rgba(33,29,24,0.07)">Diferenciais</a>
+        <a href="#incluso" onClick="{{ closeMenu }}" style="color:#241916;padding:14px 4px;font-size:15px;font-weight:600;border-bottom:1px solid rgba(33,29,24,0.07)">Estrutura</a>
+        <a href="#avaliacoes" onClick="{{ closeMenu }}" style="color:#241916;padding:14px 4px;font-size:15px;font-weight:600;border-bottom:1px solid rgba(33,29,24,0.07)">Avaliações</a>
+        <a href="#tdah" onClick="{{ closeMenu }}" style="color:#241916;padding:14px 4px;font-size:15px;font-weight:600;border-bottom:1px solid rgba(33,29,24,0.07)">TDAH</a>
+        <a href="/blog/" onClick="{{ closeMenu }}" style="color:#241916;padding:14px 4px;font-size:15px;font-weight:600;border-bottom:1px solid rgba(33,29,24,0.07)">Blog</a>
+        <a href="https://pay.hotmart.com/C104031853M?bid=1782967228079" style="margin-top:12px;background:#241916;color:#f7f5ee;text-align:center;padding:15px 20px;border-radius:999px;font-size:15px;font-weight:700">Quero meu planner</a>
       </div>
     </sc-if>
   </header>
 
   <main>
-    <!-- HERO -->
-    <section id="topo" class="hero-grid" style="max-width:1280px;margin:0 auto;padding:clamp(60px,12vw,100px) 20px;display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:center">
-      <div>
-        <p style="font-family:'Fira Code',monospace;font-size:12px;letter-spacing:0.08em;color:#6E7355;margin:0 0 26px;text-transform:uppercase">Planner Digital | Template Notion | Adaptado para TDAH | 2026-2027</p>
-        <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,7vw,53px);line-height:1.05;letter-spacing:-0.01em;margin:0 0 22px">O planner digital de quem vive com várias abas abertas na cabeça e no computador ao mesmo tempo</h1>
-        <p style="font-size:18px;line-height:1.6;color:#5C544B;margin:0 0 28px;max-width:44ch">Todas as áreas da sua vida planejadas e organizadas em um espaço seguro que gerencia sua rotina sem julgamentos.</p>
-        <ul style="list-style:none;margin:0 0 32px;padding:0;display:flex;flex-wrap:wrap;gap:10px">
-          <li style="font-size:13px;font-weight:500;background:#D9E3C9;border:1px solid rgba(33,29,24,0.08);padding:8px 14px;border-radius:999px">Modelos prontos e personalizáveis</li>
-          <li style="font-size:13px;font-weight:500;background:#D9E3C9;border:1px solid rgba(33,29,24,0.08);padding:8px 14px;border-radius:999px">Sem mensalidade</li>
-          <li style="font-size:13px;font-weight:500;background:#D9E3C9;border:1px solid rgba(33,29,24,0.08);padding:8px 14px;border-radius:999px">Compatível com o ChatGPT e o Claude</li>
-        </ul>
-        <div style="display:flex;gap:14px;flex-wrap:wrap">
-          <a href="https://pay.hotmart.com/C104031853M?bid=1782967228079" style="background:#211D18;color:#F7F5F2;font-size:15px;font-weight:600;padding:15px 26px;border-radius:12px;transition:transform 0.2s ease,box-shadow 0.2s ease" style-hover="transform:scale(1.06) translateY(-2px);box-shadow:0 14px 26px -10px rgba(33,29,24,0.45)">Quero meu planner</a>
-          <a href="#incluso" style="background:transparent;color:#211D18;font-size:15px;font-weight:600;padding:15px 26px;border-radius:12px;border:1px solid rgba(33,29,24,0.2);transition:transform 0.2s ease,box-shadow 0.2s ease" style-hover="transform:scale(1.06) translateY(-2px);box-shadow:0 14px 26px -10px rgba(33,29,24,0.2)">Espiar a estrutura</a>
-        </div>
+    <div class="ponto-effects ponto-effects-top" aria-label="Hero visual Ponto A">
+      <div class="effects-fragment-sequence">
+        <section class="effects-fragment-source-stage effects-lab-hero" aria-label="Hero do laboratório visual">
+          <div class="effects-hero-copy">
+            <h1>Tem um pedacinho da sua vida em cada aplicativo e caderno...</h1>
+          </div>
+          <div class="effects-fragment-source">
+          </div>
+        </section>
+        <section class="effects-fragment-landing grain" aria-label="Recortes acumulados">
+          <div class="effects-fragment-message">Está na hora de reunir tudo em um só lugar</div>
+        </section>
       </div>
-      <img class="hero-img" src="assets/template-notion-2026.webp" width="1600" height="1200" alt="Planner Digital Ponto A aberto em notebook e celular" style="width:100%;height:auto;border-radius:20px;display:block">
-    </section>
+      <section class="effects-session-three" aria-label="Sessão 3">
+        <div class="effects-session-three-stage">
+          <p class="effects-callout effects-callout--one"><strong>Modelos prontos e personalizáveis</strong></p>
+          <p class="effects-callout effects-callout--two"><strong>Sem mensalidade</strong></p>
+          <p class="effects-callout effects-callout--three"><strong>Compatível com o ChatGPT e o Claude</strong></p>
+          <img src="assets/template-notion-2026.webp" width="1600" height="1200" alt="Planner Digital Ponto A aberto em notebook e celular">
+        </div>
+        <div class="effects-session-three-copy">
+          <h2>O planner digital de quem vive com várias abas abertas na cabeça e no computador ao mesmo tempo</h2>
+          <p>Todas as áreas da sua vida planejadas e organizadas em um espaço seguro que gerencia sua rotina sem julgamentos.</p>
+          <a href="https://pay.hotmart.com/C104031853M?bid=1782967228079" style="background:#241916;color:#f7f5ee;font-size:14px;font-weight:600;padding:11px 20px;border-radius:999px;display:inline-block;margin-top:28px;transition:transform 0.2s ease,box-shadow 0.2s ease" style-hover="transform:scale(1.06) translateY(-2px);box-shadow:0 10px 20px -8px rgba(33,29,24,0.45)">Quero meu planner</a>
+        </div>
+      </section>
+    </div>
+
+    <div class="sx">
 
     <!-- COMPARISON -->
-    <section id="comparacao" style="background:#D9E3C9;padding:clamp(60px,12vw,100px) 20px" class="final-section-pad">
-      <div style="max-width:1120px;margin:0 auto">
-      <div style="max-width:760px;margin:0 auto 44px;text-align:center">
-        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(28px,5vw,42px);line-height:1.08;margin:0 0 16px">Toda a estrutura da sua vida rodando com alta performance na versão gratuita do Notion</h2>
-        <p style="font-size:17px;line-height:1.6;color:#5C544B;margin:0 auto;max-width:34ch">Um backup permanente de tudo que você constrói em qualquer outra plataforma na busca pelos seus sonhos.</p>
-      </div>
-      <div class="cmp-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:22px">
-        <article style="background:#fff;border:1px solid rgba(33,29,24,0.1);border-radius:18px;padding:34px">
-          <p style="font-family:'Fira Code',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#B0483A;margin:0 0 16px">Sua realidade hoje</p>
-          <h3 style="font-size:22px;font-weight:800;line-height:1.2;margin:0 0 14px">R$ 60 a R$ 200 por mês (e incontáveis horas gerando APPs)</h3>
-          <p style="font-size:15.5px;line-height:1.6;color:#5C544B;margin:0">Somando assinaturas de IA, aplicativos de hábito, planner físico, apps de metas e saúde que ocupam tempo e memória de dispositivos, às vezes sequer conversam entre si. Cada um guarda um pedaço diferente da sua vida e você já nem sabe mais onde guardou informações.</p>
-        </article>
-        <article style="background:#211D18;color:#F3EFE9;border:1px solid #211D18;border-radius:18px;padding:34px;box-shadow:0 24px 50px -28px rgba(33,29,24,0.6)">
-          <p style="font-family:'Fira Code',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#A8B487;margin:0 0 16px">Sua realidade com o planner Ponto A</p>
-          <h3 style="font-size:22px;font-weight:800;line-height:1.2;margin:0 0 14px">Único investimento, cerca de 73% de tempo sobrando na rotina</h3>
-          <p style="font-size:15.5px;line-height:1.6;color:#FFFFFF;margin:0">O template funciona inteiro na versão gratuita do Notion, sem cobrança recorrente e sem depender de qual IA está em alta este ano. Você pode integrar com a plataforma que já gosta e aumentar ainda mais o potencial do planner, ganhando tempo para aproveitar os frutos do seu esforço diário.</p>
-        </article>
-      </div>
+    <section id="comparacao" class="cmp">
+      <div class="cmp-wrap">
+        <div class="cmp-grid">
+          <div class="cmp-side cmp-side--before">
+            <p class="cmp-label"><span class="cmp-ico cmp-ico--x" aria-hidden="true">✕</span>Sem o planner</p>
+            <h2 class="cmp-h">Sua rotina espalhada em vários lugares</h2>
+            <p class="cmp-p">Agenda em um aplicativo, hábitos em outro, anotações no bloco de notas, metas perdidas, lembretes soltos e ideias que ficam pelo caminho. É lógico que você não vai conseguir dar conta de tudo né, minha flor!</p>
+            <div class="cmp-chaos" aria-hidden="true"><span class="cmp-chip cmp-chip--n" data-r="-4" style="left:4%;top:6%;transform:rotate(-4deg)">Agenda</span><span class="cmp-chip cmp-chip--d" data-r="3" style="left:42%;top:2%;transform:rotate(3deg)">Tarefas</span><span class="cmp-chip cmp-chip--n" data-r="-2" style="left:64%;top:14%;transform:rotate(-2deg)">Hábitos</span><span class="cmp-chip cmp-chip--d" data-r="2" style="left:12%;top:24%;transform:rotate(2deg)">Anotações</span><span class="cmp-chip cmp-chip--n" data-r="-5" style="left:46%;top:30%;transform:rotate(-5deg)">Refeições</span><span class="cmp-chip cmp-chip--y" data-r="4" style="left:66%;top:42%;transform:rotate(4deg)">Finanças</span><span class="cmp-chip cmp-chip--n" data-r="-3" style="left:2%;top:44%;transform:rotate(-3deg)">Lembretes</span><span class="cmp-chip cmp-chip--d" data-r="5" style="left:34%;top:52%;transform:rotate(5deg)">Ideias</span><span class="cmp-chip cmp-chip--n" data-r="-3" style="left:56%;top:63%;transform:rotate(-3deg)">App de água</span><span class="cmp-chip cmp-chip--y" data-r="3" style="left:8%;top:68%;transform:rotate(3deg)">IA</span><span class="cmp-chip cmp-chip--n" data-r="-2" style="left:38%;top:80%;transform:rotate(-2deg)">Caderno</span></div>
+          </div>
+          <div class="cmp-bridge" aria-hidden="true"><span class="cmp-bridge-line"></span><span class="cmp-bridge-arrow">→</span><span class="cmp-bridge-line"></span></div>
+          <div class="cmp-side cmp-side--after">
+            <p class="cmp-label"><span class="cmp-ico cmp-ico--ok" aria-hidden="true">✓</span>Com o planner Ponto A</p>
+            <h2 class="cmp-h">Sua vida organizada em um sistema só</h2>
+            <p class="cmp-p">Junta a sua rotina, metas, hábitos, ideias, projetos, trabalho, estudos, enfim, qualquer planejamento em um único lugar pra gastar menos tempo procurando informações e sobrar espaço pra viver.</p>
+            <div class="cmp-order">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="50" y1="50" x2="8" y2="10"/><line x1="50" y1="50" x2="92" y2="6"/><line x1="50" y1="50" x2="8" y2="40"/><line x1="50" y1="50" x2="90" y2="34"/><line x1="50" y1="50" x2="10" y2="68"/><line x1="50" y1="50" x2="92" y2="64"/><line x1="50" y1="50" x2="30" y2="96"/><line x1="50" y1="50" x2="80" y2="94"/></svg>
+              <img src="assets/template-notion-2026.webp" width="1600" height="1200" loading="lazy" alt="Planner Digital Ponto A no Notion">
+              <span class="cmp-chip cmp-chip--on  " tabindex="0" style="left:0;top:6%">Rotina<span class="cmp-tip">Tarefas recorrentes com contagem regressiva de prazo e subtarefas criadas automaticamente.</span></span><span class="cmp-chip cmp-chip--on cmp-chip--r " tabindex="0" style="right:0;top:2%">Metas<span class="cmp-tip">Metas anuais e de vida, com controle de subtarefas e sistema de recompensa.</span></span><span class="cmp-chip cmp-chip--on  " tabindex="0" style="left:0;top:36%">Hábitos<span class="cmp-tip">O essencial para ser saudável, com liberdade para customizar o que importa na sua rotina.</span></span><span class="cmp-chip cmp-chip--on cmp-chip--r " tabindex="0" style="right:0;top:30%">Planejamento<span class="cmp-tip">Eventos, planejamento do lar, organização de mudança e tudo o que vem pela frente.</span></span><span class="cmp-chip cmp-chip--on  " tabindex="0" style="left:2%;top:64%">Projetos<span class="cmp-tip">Etapas, entregas e tarefas para dar vida ao que você quer construir.</span></span><span class="cmp-chip cmp-chip--on cmp-chip--r " tabindex="0" style="right:0;top:60%">Ideias<span class="cmp-tip">Banco de ideias, favoritos e textos pessoais para capturar tudo antes que se perca.</span></span><span class="cmp-chip cmp-chip--on  cmp-chip--b" tabindex="0" style="left:24%;bottom:0">Estudos<span class="cmp-tip">Biblioteca com relatórios de leitura, cursos, matérias, módulos e redação científica.</span></span><span class="cmp-chip cmp-chip--on cmp-chip--r cmp-chip--b" tabindex="0" style="right:6%;bottom:2%">Trabalho<span class="cmp-tip">Clientes, serviços, demandas e tarefas em uma estrutura funcional.</span></span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-
-    <hr style="max-width:1120px;margin:0 auto;border:none;border-top:1px solid rgba(33,29,24,0.12)">
 
     <!-- POSITIONING -->
-    <section style="max-width:760px;margin:0 auto;padding:clamp(60px,12vw,100px) 20px;text-align:center" class="final-section-pad">
-      <p style="font-family:'Fira Code',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#6E7355;margin:0 0 14px">Único em todo o mercado digital</p>
-      <h2 class="positioning-title" style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,5.5vw,40px);line-height:1.1;margin:0 0 18px">Não existe um planner digital como este</h2>
-      <p style="font-size:17px;line-height:1.65;color:#5C544B;margin:0 0 26px">Feito de humano para humanos, considerando perspectivas que a IA não consegue reproduzir por não <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:700;font-size:19px">experienciar</em> rotina, escolhas, frustrações, emoções, mudanças de fase e histórias de vida.</p>
-      <div style="background:#EFE9E1;border:1px solid rgba(33,29,24,0.08);border-radius:14px;padding:20px 24px;font-family:'Fira Code',monospace;font-size:13px;line-height:1.7;color:#4A433B;text-align:center">Criado do zero pela produtora, testado e atualizado durante 5 anos a partir do feedback dos usuários. Isso significa que foi validado por diferentes rotinas e histórias de vida.</div>
+    <section class="sx-sec sx-sec--paper sx-pos">
+      <div class="sx-wrap sx-pos-grid">
+        <div class="sx-pos-title">
+          <p class="sx-label">Único em todo o mercado digital</p>
+          <h2 class="sx-h2">Não existe um planner digital como este</h2>
+          <aside class="sx-note">
+            <p class="sx-p">Criado do zero pela produtora, testado e atualizado durante 5 anos a partir do feedback dos usuários. Isso significa que foi validado por diferentes rotinas e histórias de vida.</p>
+          </aside>
+        </div>
+        <div class="sx-pos-body">
+          <p class="sx-lead">Feito de humano para humanos, considerando perspectivas que a IA não consegue reproduzir por não <em>experienciar</em> rotina, escolhas, frustrações, emoções, mudanças de fase e histórias de vida.</p>
+        </div>
+      </div>
     </section>
-
-    <hr style="max-width:1120px;margin:0 auto;border:none;border-top:1px solid rgba(33,29,24,0.12)">
 
     <!-- DIFFERENCES -->
-    <section id="diferenciais" style="max-width:1120px;margin:0 auto;padding:clamp(60px,12vw,100px) 20px" class="final-section-pad">
-      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(28px,5vw,42px);line-height:1.08;margin:0 auto 40px;text-align:center;max-width:600px">Baseado em psicologia comportamental &amp; Fundamentos da neurociência afetiva</h2>
-      <div class="diff-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
-        <sc-for list="{{ differences }}" as="d" hint-placeholder-count="6">
-          <article style="background:#fff;border:1px solid rgba(33,29,24,0.1);border-radius:16px;padding:28px">
-            <span style="font-family:'Instrument Serif',serif;font-size:26px;color:#6E7355;display:block;margin-bottom:14px">{{ d.n }}</span>
-            <h3 style="font-size:17px;font-weight:700;line-height:1.25;margin:0 0 10px">{{ d.title }}</h3>
-            <p style="font-size:15.5px;line-height:1.6;color:#5C544B;margin:0">{{ d.body }}</p>
-          </article>
-        </sc-for>
+    <section id="diferenciais" class="sx-sec sx-sec--white">
+      <div class="sx-wrap sx-diff-grid">
+        <div class="sx-diff-intro">
+          <h2 class="sx-h2">Baseado em psicologia comportamental &amp; fundamentos da neurociência afetiva</h2>
+        </div>
+        <ol class="sx-diff-list">
+          <li class="sx-diff-item">
+            <span class="sx-num">01</span>
+            <div>
+              <h3 class="sx-h3">Sem distrações visuais</h3>
+              <p class="sx-p">Nenhuma decoração rouba o palco do que você realmente precisa bater o olho e encontrar.</p>
+            </div>
+          </li>
+          <li class="sx-diff-item">
+            <span class="sx-num">02</span>
+            <div>
+              <h3 class="sx-h3">Funções avançadas para leigos e experts</h3>
+              <p class="sx-p">Não importa o seu nível de conhecimento sobre o Notion porque ele é intuitivo até para quem nunca usou.</p>
+            </div>
+          </li>
+          <li class="sx-diff-item">
+            <span class="sx-num">03</span>
+            <div>
+              <h3 class="sx-h3">Uma página, várias áreas</h3>
+              <p class="sx-p">A mesma página serve para diferentes áreas da vida pela integração de bases de dados, reduzindo a necessidade de criar várias estruturas para o mesmo assunto.</p>
+            </div>
+          </li>
+          <li class="sx-diff-item">
+            <span class="sx-num">04</span>
+            <div>
+              <h3 class="sx-h3">Alta performance, interpretação rápida</h3>
+              <p class="sx-p">Contagens regressivas, análises com insights de resultados, modelos prontos, criação automática de páginas e visualização funcional das propriedades principais.</p>
+            </div>
+          </li>
+          <li class="sx-diff-item">
+            <span class="sx-num">05</span>
+            <div>
+              <h3 class="sx-h3">Decisões baseadas em dados</h3>
+              <p class="sx-p">Através dos mostruários, você consegue ter insights sobre vida pessoal, trabalho, estudos e projetos.</p>
+            </div>
+          </li>
+          <li class="sx-diff-item">
+            <span class="sx-num">06</span>
+            <div>
+              <h3 class="sx-h3">Estrutura legível por IA</h3>
+              <p class="sx-p">Organização pensada para Claude e ChatGPT inspecionarem sem confundir dados, reduzindo respostas genéricas ou inventadas.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
-
-    <hr style="max-width:1120px;margin:0 auto;border:none;border-top:1px solid rgba(33,29,24,0.12)">
 
     <!-- EMOTIONAL BAND -->
-    <section style="background:#211D18;color:#F3EFE9">
-      <div class="emo-grid final-section-pad" style="max-width:1120px;margin:0 auto;padding:clamp(60px,12vw,100px) 20px;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center">
-        <div>
-          <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,5vw,38px);line-height:1.1;margin:0 0 20px">O espaço seguro que limpa sua mente para conseguir dormir tranquila sabendo que tudo está no seu devido lugar</h2>
-          <p style="font-size:16px;line-height:1.6;color:#F3EFE9;margin:0 0 20px">Toda a estrutura foi criada para te impulsionar a:</p>
-          <ul style="list-style:none;margin:0;padding:0;display:grid;gap:12px">
-            <sc-for list="{{ impulses }}" as="i" hint-placeholder-count="4">
-              <li style="display:flex;align-items:stretch;font-family:'Fira Code',monospace;font-size:15px;font-weight:400;line-height:1.5;color:#000;background:#D9E3C9;border:1px solid rgba(33,29,24,0.08);border-radius:10px;overflow:hidden">
-                <span style="display:flex;align-items:center;color:#000;flex:none;padding:14px 18px;border-right:1px solid rgba(33,29,24,0.1)">✓</span>
-                <span style="display:flex;align-items:center;padding:14px 18px">{{ i }}</span>
-              </li>
-            </sc-for>
+    <section class="sx-sec sx-sec--ink sx-emo">
+      <div class="sx-wrap sx-emo-grid">
+        <div class="sx-emo-media">
+          <img src="assets/identidade-visual.webp" width="920" height="640" loading="lazy" alt="Prévia visual dos módulos integrados do Planner Digital Ponto A">
+        </div>
+        <div class="sx-emo-copy">
+          <h2 class="sx-h2">Durma tranquila, amada, está tudo no seu devido lugar</h2>
+          <p class="sx-p">Toda a estrutura foi criada para te impulsionar a:</p>
+          <ul class="sx-checks">
+            <li><span class="sx-check">✓</span><span>Transformar a teoria em prática</span></li>
+            <li><span class="sx-check">✓</span><span>Revisar planos e calcular rotas sempre que precisar</span></li>
+            <li><span class="sx-check">✓</span><span>Mudar suas prioridades de vida com coerência</span></li>
+            <li><span class="sx-check">✓</span><span>Não deixar a peteca cair com sua saúde física e mental</span></li>
           </ul>
         </div>
-        <img class="emo-img" src="assets/identidade-visual.webp" width="920" height="640" loading="lazy" alt="Prévia visual dos módulos integrados do Planner Digital Ponto A" style="width:100%;height:auto;display:block">
       </div>
     </section>
 
-    <hr style="max-width:1120px;margin:0 auto;border:none;border-top:1px solid rgba(33,29,24,0.12)">
-
-    <!-- FEATURES ACCORDION -->
-    <section id="incluso" style="background-color:#F7F5F2"><div class="final-section-pad" style="max-width:1040px;margin:0 auto;padding:clamp(60px,12vw,100px) 20px">
-      <div style="text-align:center;margin-bottom:40px">
-        <p style="font-family:'Fira Code',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#6E7355;margin:0 0 12px">O que tem no planner digital Ponto A</p>
-        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,5vw,38px);line-height:1.1;margin:0 0 14px">Qual área da vida você mais faz questão de organizar?</h2>
-        <p style="font-size:16px;color:#5C544B;margin:0">Selecione uma área para ver as funções específicas.</p>
-      </div>
-      <div class="feat-grid" style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(4,auto);grid-auto-flow:column;align-items:start;gap:12px 20px">
-        <sc-for list="{{ features }}" as="f" hint-placeholder-count="8">
-          <div style="background:#fff;border:1px solid rgba(33,29,24,0.1);border-radius:14px;overflow:hidden">
-            <button onClick="{{ f.toggle }}" style="width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:18px 22px;display:flex;align-items:center;gap:14px;font-family:Inter,sans-serif;font-size:16px;font-weight:600;color:#211D18">
-              {{ f.label }}
-              <span style="margin-left:auto;font-size:13px;color:#6E7355;font-family:'Fira Code',monospace">{{ f.sign }}</span>
-            </button>
-            <sc-if value="{{ f.isOpen }}" hint-placeholder-val="{{ false }}">
-              <div style="padding:4px 22px 24px">
-                <ul style="list-style:none;margin:0;padding:0;display:grid;gap:14px">
-                  <sc-for list="{{ f.items }}" as="it" hint-placeholder-count="3">
-                    <li class="feat-item" style="display:grid;gap:3px;border-top:1px solid rgba(33,29,24,0.07);padding-top:12px">
-                      <strong style="font-size:14px;font-weight:700;color:#211D18">{{ it.term }}</strong>
-                      <span style="font-size:15.5px;line-height:1.6;color:#5C544B">{{ it.desc }}</span>
-                    </li>
-                  </sc-for>
-                </ul>
-                <sc-if value="{{ f.hasQuote }}" hint-placeholder-val="{{ false }}">
-                  <div style="margin-top:18px;background:#D9E3C9;border-radius:12px;padding:16px 18px;font-family:'Instrument Serif',serif;font-style:normal;font-weight:400;font-size:19px;line-height:1.5;color:#4A433B">
-                    {{ f.quote }}
-                    <span style="display:block;margin-top:8px;font-family:'Fira Code',monospace;font-style:normal;font-size:11px;color:#8A8177;text-transform:uppercase;letter-spacing:0.04em">{{ f.quoteBy }}</span>
-                  </div>
-                </sc-if>
+    <!-- FEATURES (tabs) -->
+    <section id="incluso" class="sx-sec sx-sec--paper sx-feat">
+      <div class="sx-wrap">
+        <header class="sx-head sx-head--center">
+          <p class="sx-label">O que tem no planner digital Ponto A</p>
+          <h2 class="sx-h2">Qual área da vida você mais faz questão de organizar?</h2>
+          <p class="sx-p">Selecione uma área para ver as funções específicas.</p>
+        </header>
+        <div class="sx-tabs" role="tablist" aria-label="Áreas da vida">
+          <button type="button" class="sx-tab is-active" role="tab" data-sx-tab="0" aria-selected="true">Branding pessoal</button>
+          <button type="button" class="sx-tab" role="tab" data-sx-tab="1" aria-selected="false">Vida pessoal</button>
+          <button type="button" class="sx-tab" role="tab" data-sx-tab="2" aria-selected="false">Saúde mental e física</button>
+          <button type="button" class="sx-tab" role="tab" data-sx-tab="3" aria-selected="false">Trabalho e projetos</button>
+          <button type="button" class="sx-tab" role="tab" data-sx-tab="4" aria-selected="false">Tarefas de rotina</button>
+          <button type="button" class="sx-tab" role="tab" data-sx-tab="5" aria-selected="false">Casa</button>
+          <button type="button" class="sx-tab" role="tab" data-sx-tab="6" aria-selected="false">Metas anuais e de vida</button>
+          <button type="button" class="sx-tab" role="tab" data-sx-tab="7" aria-selected="false">Estudo</button>
+        </div>
+        <div class="sx-panels">
+          <div class="sx-panel is-active" role="tabpanel" data-sx-panel="0">
+            <p class="sx-label sx-panel-title">Branding pessoal</p>
+            <div class="sx-brand">
+              <ul class="sx-feat-list sx-feat-list--one">
+                <li>
+                  <h3 class="sx-h3">Aspirações</h3>
+                  <p class="sx-p">Reúna seus principais interesses e tenha um histórico de tudo que aprende ou explora.</p>
+                </li>
+                <li>
+                  <h3 class="sx-h3">Estilo pessoal</h3>
+                  <p class="sx-p">Seu guarda-roupa registrado e planejado.</p>
+                </li>
+                <li>
+                  <h3 class="sx-h3">Compras conscientes</h3>
+                  <p class="sx-p">Sistema de investimento consciente com análise antes da compra.</p>
+                </li>
+              </ul>
+              <div class="sx-brand-side">
+                <blockquote class="sx-quote">
+                  <p class="sx-lead">“Ótimo para planejar o visual e as peças que vai comprar.”</p>
+                  <footer class="sx-label">S. P. A. — 25 de maio de 2025</footer>
+                </blockquote>
+                <div class="sx-photo"><image-slot id="branding-foto" shape="rounded" radius="20" placeholder="Adicione uma foto"></image-slot></div>
               </div>
-            </sc-if>
+            </div>
           </div>
-        </sc-for>
-      </div>
-    </div></section>
-
-    <hr style="max-width:1120px;margin:0 auto;border:none;border-top:1px solid rgba(33,29,24,0.12)">
-
-    <!-- TESTIMONIALS -->
-    <section id="avaliacoes" style="background:#D9E3C9"><div class="final-section-pad" style="max-width:1120px;margin:0 auto;padding:clamp(60px,12vw,100px) 20px">
-      <div style="max-width:620px;margin:0 auto 34px;text-align:center">
-        <p style="font-family:'Fira Code',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#6E7355;margin:0 0 12px">Avaliações e opiniões</p>
-        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,5vw,38px);line-height:1.1;margin:0 0 10px">Feedbacks de quem confia no planner</h2>
-        <p style="font-size:16px;color:#5C544B;margin:0 0 30px">Relatos de usuários que usam templates da produtora.</p>
-        <div style="display:inline-flex;flex-direction:column;align-items:center;gap:8px">
-          <div style="color:#3F5A38;font-size:40px;letter-spacing:6px;line-height:1">★★★★★</div>
-          <div style="font-family:'Instrument Serif',serif;font-size:48px;line-height:1">5 / 5</div>
-          <div style="font-family:'Fira Code',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8A8177;font-weight:600">Nota geral</div>
+          <div class="sx-panel" role="tabpanel" data-sx-panel="1">
+            <p class="sx-label sx-panel-title">Vida pessoal</p>
+            <ul class="sx-feat-list">
+              <li>
+                <h3 class="sx-h3">Favoritos</h3>
+                <p class="sx-p">Tudo que você mais gosta em um só lugar para explorar conhecimentos, desenvolver ideias ou salvar recomendações.</p>
+              </li>
+              <li>
+                <h3 class="sx-h3">Lugares</h3>
+                <p class="sx-p">Planeje visitar lugares novos, avalie os que conheceu e organize viagens.</p>
+              </li>
+              <li>
+                <h3 class="sx-h3">Banco de ideias</h3>
+                <p class="sx-p">Espaço para capturar ideias antes que elas se percam.</p>
+              </li>
+              <li>
+                <h3 class="sx-h3">Textos pessoais</h3>
+                <p class="sx-p">Registro de escrita pessoal para se expressar, inspirar projetos ou observar suas emoções.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="sx-panel" role="tabpanel" data-sx-panel="2">
+            <p class="sx-label sx-panel-title">Saúde mental e física</p>
+            <ul class="sx-feat-list">
+              <li>
+                <h3 class="sx-h3">Hábitos e autocuidado</h3>
+                <p class="sx-p">Apenas o essencial para ser saudável, com liberdade para customizar o que for mais importante na sua rotina.</p>
+              </li>
+              <li>
+                <h3 class="sx-h3">Diário guiado</h3>
+                <p class="sx-p">Registro estruturado para observar dias, acontecimentos, emoções e padrões.</p>
+              </li>
+              <li>
+                <h3 class="sx-h3">Cápsula do tempo</h3>
+                <p class="sx-p">Mensagens da sua eu do passado para a eu do presente ou do futuro. Receba a carta quando o dia chegar.</p>
+              </li>
+              <li>
+                <h3 class="sx-h3">Academia</h3>
+                <p class="sx-p">Planeje seu treino e acompanhe seu progresso.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="sx-panel" role="tabpanel" data-sx-panel="3">
+            <p class="sx-label sx-panel-title">Trabalho e projetos</p>
+            <ul class="sx-feat-list">
+              <li>
+                <h3 class="sx-h3">Administração de demandas</h3>
+                <p class="sx-p">Gerencie clientes, serviços, demandas e tarefas em uma estrutura funcional.</p>
+              </li>
+              <li>
+                <h3 class="sx-h3">Projetos</h3>
+                <p class="sx-p">Organize ideias, etapas, entregas e tarefas com liberdade criativa para dar vida ao que você quer construir.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="sx-panel" role="tabpanel" data-sx-panel="4">
+            <p class="sx-label sx-panel-title">Tarefas de rotina</p>
+            <ul class="sx-feat-list">
+              <li>
+                <h3 class="sx-h3">Projetos e trabalho</h3>
+                <p class="sx-p">Tarefas recorrentes com contagem regressiva de prazo e criação automática de subtarefa.</p>
+              </li>
+              <li>
+                <h3 class="sx-h3">Eventos</h3>
+                <p class="sx-p">Planejador de looks e gerenciamento de tarefas relacionadas ao evento.</p>
+              </li>
+            </ul>
+            <blockquote class="sx-quote">
+              <p class="sx-lead">“Gostei da disposição e da contagem de dias restantes.”</p>
+              <footer class="sx-label">Felipe S. — 26 de fevereiro de 2025</footer>
+            </blockquote>
+          </div>
+          <div class="sx-panel" role="tabpanel" data-sx-panel="5">
+            <p class="sx-label sx-panel-title">Casa</p>
+            <ul class="sx-feat-list">
+              <li>
+                <h3 class="sx-h3">Planejamento do lar</h3>
+                <p class="sx-p">Tarefas e decoração.</p>
+              </li>
+              <li>
+                <h3 class="sx-h3">Organização de mudança</h3>
+                <p class="sx-p">Todas as etapas com progresso.</p>
+              </li>
+            </ul>
+            <blockquote class="sx-quote">
+              <p class="sx-lead">“Nossa isso é perfeito, obrigada por isso. Meu sonho de menina.”</p>
+              <footer class="sx-label">Nathalia — 19 de junho de 2025</footer>
+            </blockquote>
+          </div>
+          <div class="sx-panel" role="tabpanel" data-sx-panel="6">
+            <p class="sx-label sx-panel-title">Metas anuais e de vida</p>
+            <ul class="sx-feat-list">
+              <li>
+                <h3 class="sx-h3">Controle de subtarefas</h3>
+                <p class="sx-p">O passo a passo que você precisa para saber para onde está indo.</p>
+              </li>
+              <li>
+                <h3 class="sx-h3">Sistema de recompensa para metas</h3>
+                <p class="sx-p">Motivação constante durante todo o processo.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="sx-panel" role="tabpanel" data-sx-panel="7">
+            <p class="sx-label sx-panel-title">Estudo</p>
+            <ul class="sx-feat-list">
+              <li>
+                <h3 class="sx-h3">Biblioteca</h3>
+                <p class="sx-p">Com autores, gêneros, séries pré-cadastradas e relatórios de leitura.</p>
+              </li>
+              <li>
+                <h3 class="sx-h3">Cursos</h3>
+                <p class="sx-p">Com matérias, módulos, demandas, tarefas, leituras e redação científica.</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px">
-        <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="5">
-          <article style="flex:0 1 calc((100% - 36px)/3);min-width:280px;background:#fff;border:1px solid rgba(33,29,24,0.1);border-radius:16px;padding:22px;text-align:center;display:flex;flex-direction:column;justify-content:center">
-            <p style="font-size:15px;line-height:1.6;color:#3A342D;margin:0 0 18px">“{{ t.text }}”</p>
-            <footer style="display:flex;flex-direction:column;align-items:center;gap:6px;border-top:1px solid rgba(33,29,24,0.12);padding-top:16px">
-              <strong style="font-size:13px;font-family:'Fira Code',monospace;text-transform:uppercase;letter-spacing:0.06em">{{ t.name }}</strong>
-              <span style="font-size:12px;color:#8A8177;font-family:'Fira Code',monospace;text-transform:uppercase;letter-spacing:0.04em">{{ t.date }}</span>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="avaliacoes" class="sx-sec sx-sec--stone">
+      <div class="sx-wrap sx-rev-grid">
+        <div class="sx-rev-aside">
+          <p class="sx-label sx-label--dot">Avaliações e opiniões</p>
+          <h2 class="sx-h2">Feedbacks de quem confia no planner</h2>
+          <p class="sx-p">Relatos de usuários que usam templates da produtora.</p>
+          <div class="sx-score">
+            <div class="sx-score-num">5 / 5</div>
+            <div class="sx-label">Nota geral</div>
+            <div class="sx-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="sx-rev-list">
+          <article class="sx-rev-card">
+            <p class="sx-p">“Modelo de fácil acesso e prático, tudo separado por temas bem organizado. Parabéns.”</p>
+            <footer>
+              <strong class="sx-label">Leticia M.</strong>
+              <span class="sx-label">22 de julho de 2025</span>
             </footer>
           </article>
-        </sc-for>
+          <article class="sx-rev-card">
+            <p class="sx-p">“É um modelo bonito, bem intuitivo de se usar e funcional, estou adaptando para usar no controle de leituras do meu projeto de IC e está sendo bem satisfatório.”</p>
+            <footer>
+              <strong class="sx-label">Giulia V. S.</strong>
+              <span class="sx-label">18 de junho de 2026</span>
+            </footer>
+          </article>
+          <article class="sx-rev-card">
+            <p class="sx-p">“Parabéns pelo seu empenho em auxiliar a comunidade de pesquisa e estudo. Bora estudar galera.”</p>
+            <footer>
+              <strong class="sx-label">Marcelo M.</strong>
+              <span class="sx-label">8 de maio de 2026</span>
+            </footer>
+          </article>
+          <article class="sx-rev-card">
+            <p class="sx-p">“Abalou muito a querida que fez esse template. Vou usar pra organizar minhas leituras do mestrado e meus escritos.”</p>
+            <footer>
+              <strong class="sx-label">Leticia B.</strong>
+              <span class="sx-label">18 de janeiro de 2026</span>
+            </footer>
+          </article>
+          <article class="sx-rev-card">
+            <p class="sx-p">“Muito prático e funcional. Deu para organizar minhas leituras.”</p>
+            <footer>
+              <strong class="sx-label">Josiane S.</strong>
+              <span class="sx-label">1 de fevereiro de 2025</span>
+            </footer>
+          </article>
+        </div>
       </div>
-    </div></section>
-
-    <hr style="max-width:1120px;margin:0 auto;border:none;border-top:1px solid rgba(33,29,24,0.12)">
+    </section>
 
     <!-- TDAH -->
-    <section id="tdah" style="max-width:1120px;margin:0 auto;padding:clamp(60px,12vw,100px) 20px" class="final-section-pad">
-      <div style="max-width:760px;margin:0 auto 40px;text-align:center">
-        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,5.5vw,40px);line-height:1.1;margin:0 0 16px">A nova versão para 2026/2027 é adaptada para quem tem TDAH</h2>
-        <p style="font-size:16px;line-height:1.6;color:#5C544B;margin:0">Após um estudo aprofundado sobre o funcionamento do cérebro de uma pessoa com TDAH, ajustes foram feitos para tornar a usabilidade ainda mais intuitiva e com menor sobrecarga visual.</p>
-      </div>
-      <div class="adhd-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:28px">
-        <sc-for list="{{ adhd }}" as="a" hint-placeholder-count="8">
-          <article style="background:#fff;border:1px solid rgba(33,29,24,0.14);border-radius:16px;padding:30px">
-            <span style="width:36px;height:36px;border-radius:9px;background:#D9E3C9;display:grid;place-items:center;margin-bottom:22px;font-size:16px">{{ a.icon }}</span>
-            <p style="font-size:15.5px;line-height:1.6;color:#4A433B;margin:0">{{ a.pre }}<strong style="font-weight:700;color:#211D18">{{ a.bold }}</strong>{{ a.post }}</p>
+    <section id="tdah" class="sx-sec sx-sec--white">
+      <div class="sx-wrap">
+        <header class="sx-head sx-head--center">
+          <h2 class="sx-h2">Estrategicamente desenvolvido para mentes e x a u s t a s</h2>
+          <p class="sx-p">Baseado em como o cérebro de uma pessoa com TDAH funciona, ajustes foram feitos para tornar a usabilidade ainda mais intuitiva e com menor sobrecarga visual para qualquer pessoa.</p>
+        </header>
+        <div class="sx-adhd-grid">
+          <article class="sx-adhd-card">
+            <span class="sx-icon">☰</span>
+            <p class="sx-p"><strong>Organização por cores</strong> funciona como gatilho visual para encontrar informações de forma mais intuitiva. Sem poluição visual, o planner usa as próprias capas de páginas como decoração.</p>
           </article>
-        </sc-for>
+          <article class="sx-adhd-card">
+            <span class="sx-icon">▤</span>
+            <p class="sx-p"><strong>Hub de tarefas</strong> categorizado pela própria ação a ser feita, facilitando a tomada de decisão na rotina. Você pode personalizar as frases, reorganizar arrastando páginas ou usar sem categorização.</p>
+          </article>
+          <article class="sx-adhd-card">
+            <span class="sx-icon">◷</span>
+            <p class="sx-p">Para quem tem dificuldade com percepção interna de tempo, datas futuras parecem distantes até virarem urgência. As <strong>contagens regressivas</strong> reduzem essa dependência.</p>
+          </article>
+          <article class="sx-adhd-card">
+            <span class="sx-icon">▦</span>
+            <p class="sx-p"><strong>Status</strong> evitam a sensação de que está tudo parado. Ver uma tarefa arquivada traz a certeza de que intencionalmente não foi realizada, não por distrações ou perda de prazos.</p>
+          </article>
+          <article class="sx-adhd-card">
+            <span class="sx-icon">✓</span>
+            <p class="sx-p"><strong>Hábitos</strong> foca em elementos físicos e mentais que impactam diretamente concentração, regulação emocional e capacidade de iniciar tarefas. Ou seja, focamos no básico que funciona.</p>
+          </article>
+          <article class="sx-adhd-card">
+            <span class="sx-icon">✎</span>
+            <p class="sx-p"><strong>Diário guiado</strong> é autorregulação na prática. Registrar experiências ajuda a perceber ciclos que a memória emocional do momento pode distorcer.</p>
+          </article>
+          <article class="sx-adhd-card">
+            <span class="sx-icon">✉</span>
+            <p class="sx-p">A <strong>cápsula do tempo</strong> e os textos pessoais preservam pensamentos, lemas e fases da própria identidade. Ter registros próprios facilita lembrar decisões e valores.</p>
+          </article>
+          <article class="sx-adhd-card">
+            <span class="sx-icon">⛁</span>
+            <p class="sx-p">O <strong>planejamento de compras</strong> com análise de motivos ajuda a pausar antes da decisão, útil para prevenir compras impulsivas feitas no calor do interesse.</p>
+          </article>
+        </div>
       </div>
-      <a href="#" style="display:block;max-width:760px;margin:28px auto 0;text-align:center;font-size:14px;line-height:1.8;color:#6E7355;text-decoration:underline;text-underline-offset:3px">Para entender como todas as outras funções do planner também foram idealizadas pensando na inclusão de pessoas com TDAH, confira o post completo no blog.</a>
     </section>
 
-    <hr style="max-width:1120px;margin:0 auto;border:none;border-top:1px solid rgba(33,29,24,0.12)">
-
-    <!-- FINAL CTA -->
-    <section id="comprar" style="background-color:#D9E3C9;background-image:radial-gradient(rgba(33,29,24,0.13) 1.1px, transparent 1.1px);background-size:15px 15px;color:#211D18">
-      <div class="final-section-pad" style="max-width:720px;margin:0 auto;padding:clamp(60px,12vw,100px) 20px;text-align:center">
-        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(28px,6vw,44px);line-height:1.08;margin:0 0 18px">Comece a liberar espaço na vida para vivê-la de verdade</h2>
-        <p style="font-size:17px;line-height:1.6;color:#4A5340;margin:0 0 32px">Tenha um sistema pronto para planejar, organizar e gerenciar sua rotina sem depender de dezenas de aplicativos, abas abertas e estruturas soltas.</p>
-        <a href="https://pay.hotmart.com/C104031853M?bid=1782967228079" style="display:inline-block;background:#211D18;color:#F7F5F2;font-size:16px;font-weight:700;padding:17px 34px;border-radius:12px;transition:transform 0.2s ease,box-shadow 0.2s ease" style-hover="transform:scale(1.06) translateY(-2px);box-shadow:0 16px 30px -10px rgba(33,29,24,0.45)">Quero meu planner</a>
-      </div>
-    </section>
+    </div>
 
     <div class="ponto-effects" aria-label="Laboratório visual Ponto A">
-      <section class="effects-frosted grain">
-        <p class="effects-section-tag effects-section-tag--light">02 / Frozen glass</p>
+      <section class="effects-frosted">
         <div class="effects-frosted-content effects-reveal">
           <p class="effects-eyebrow">PREVIEW</p>
           <h2>Dá uma espiadinha no seu planner</h2>
-          <p>É só um spoiler de tuuudo que você consegue fazer com ele.</p>
+          <p>Só um spoiler de tudo que você consegue fazer</p>
+        </div>
+        <div class="effects-frosted-media" aria-hidden="true"></div>
+      </section>
+
+      <section class="effects-questions" aria-label="Dúvidas frequentes">
+        <img class="effects-questions-clip" src="./assets/faq-clip-gold.webp" alt="">
+        <div class="effects-questions-paper">
+          <div class="effects-questions-heading"><h2>Dúvidas<br><strong>frequentes</strong></h2></div>
+          <div class="effects-faq-list">
+            <article class="effects-faq-item"><button class="effects-faq-question" type="button" aria-expanded="false"><span>Preciso pagar pelo Notion para usar o planner?</span><b aria-hidden="true">+</b></button><div class="effects-faq-answer"><p>Não. O planner funciona na versão gratuita do Notion. Depois da compra, você duplica o template para a sua própria conta e passa a usar normalmente.</p></div></article>
+            <article class="effects-faq-item"><button class="effects-faq-question" type="button" aria-expanded="false"><span>Consigo usar no celular, tablet e computador?</span><b aria-hidden="true">+</b></button><div class="effects-faq-answer"><p>Sim. O mesmo planner pode ser acessado pelo aplicativo do Notion no celular e no tablet ou pelo computador. As informações ficam sincronizadas na mesma conta.</p></div></article>
+            <article class="effects-faq-item"><button class="effects-faq-question" type="button" aria-expanded="false"><span>O planner serve só para 2026 e 2027?</span><b aria-hidden="true">+</b></button><div class="effects-faq-answer"><p>Não, para qualquer ano. Ele já vem estruturado para 2026 e 2027, com a organização necessária para planejar esse período, mas a estrutura também pode continuar sendo usada e adaptada a longo prazo.</p></div></article>
+            <article class="effects-faq-item"><button class="effects-faq-question" type="button" aria-expanded="false"><span>Preciso saber usar o Notion para conseguir usar o planner?</span><b aria-hidden="true">+</b></button><div class="effects-faq-answer"><p>Não precisa ter experiência avançada. A estrutura já vem montada para você preencher e consultar no dia a dia, sem precisar construir bancos de dados, fórmulas ou sistemas do zero.</p></div></article>
+            <article class="effects-faq-item"><button class="effects-faq-question" type="button" aria-expanded="false"><span>Posso personalizar o planner do meu jeito?</span><b aria-hidden="true">+</b></button><div class="effects-faq-answer"><p>Sim. Você pode alterar textos, categorias, páginas, visualizações e outras partes do template para adaptar o planner à sua rotina e à forma como prefere se organizar.</p></div></article>
+          </div>
+          <div class="effects-faq-cta"><a href="https://pay.hotmart.com/C104031853M?bid=1782967228079">Quero meu planner</a></div>
         </div>
       </section>
 
-      <section class="effects-embossed grain">
-        <p class="effects-section-tag">06 / Embossed elevado</p>
-        <div class="effects-embossed-mark effects-embossed-mark--life effects-reveal" aria-label="Planner de vida em relevo">Planner de vida</div>
+      <section class="effects-session-six-cta" aria-label="Comece a liberar espaço na vida">
+        <div>
+          <h2>Comece a liberar espaço na vida para vivê-la de verdade</h2>
+          <p>Tenha um sistema pronto para planejar, organizar e gerenciar sua rotina sem depender de dezenas de aplicativos, abas abertas e estruturas soltas.</p>
+          <a href="https://pay.hotmart.com/C104031853M?bid=1782967228079">Quero meu planner</a>
+        </div>
       </section>
 
       <div class="effects-rings-divider" aria-hidden="true">
         <img src="./assets/effects-rings-transparent.png" alt="">
       </div>
 
-      <section class="effects-embossed effects-embossed--inset">
-        <p class="effects-section-tag">07 / Embossed pressionado</p>
-        <div class="effects-embossed-mark effects-reveal" aria-label="Lorem pressionado no papel">LOREM</div>
+      <section class="effects-embossed effects-embossed--inset effects-final-pressed">
+        <div class="effects-embossed-mark effects-reveal" aria-label="Ponto A pressionado">PONTO A</div>
       </section>
 
-      <section class="effects-notebook" aria-label="Teste de fichário como seção">
-        <p class="effects-section-tag">08 / Fichario em duas colunas</p>
-        <div class="effects-notebook-page">
-          <div class="effects-binder-column"></div>
-          <div class="effects-binder-plain"></div>
-        </div>
-      </section>
-
-      <div class="effects-fragment-sequence">
-        <section class="effects-fragment-source-stage" aria-label="Imagem sendo recortada">
-          <div class="effects-fragment-source">
-            <p class="effects-section-tag effects-section-tag--light">14 / Picote da imagem</p>
-            <div class="effects-fragment-copy">
-              <h2>Seus registros importantes acabam se perdendo, espalhados por aí</h2>
-            </div>
-          </div>
-        </section>
-        <section class="effects-fragment-landing grain" aria-label="Recortes acumulados">
-          <p class="effects-section-tag">15 / Queda dos recortes</p>
-          <div class="effects-fragment-emboss">E fica cada vez mais difícil de organizar ou conectar tudo</div>
-        </section>
-      </div>
-
-      <section class="effects-questions" aria-label="Dúvidas frequentes">
-        <img class="effects-questions-clip" src="./assets/effects-clip-clean.png" alt="">
-        <div class="effects-questions-paper">
-          <div class="effects-questions-heading"><h2>Dúvidas<br><strong>frequentes</strong></h2></div>
-        </div>
-      </section>
     </div>
   </main>
 
@@ -331,14 +523,14 @@
 
 <template id="__bundler_thumbnail">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-    <rect width="100" height="100" fill="#D9E3C9"/>
-    <text x="50" y="68" font-family="Georgia, serif" font-size="46" fill="#211D18" text-anchor="middle">A</text>
+    <rect width="100" height="100" fill="#f9e79f"/>
+    <text x="50" y="68" font-family="Georgia, serif" font-size="46" fill="#241916" text-anchor="middle">A</text>
   </svg>
 </template>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { open: -1, menuOpen: false };
+  state = { menuOpen: false };
 
   componentDidMount() {
     const loadScript = (src, marker) => new Promise((resolve, reject) => {
@@ -362,107 +554,17 @@ class Component extends DCLogic {
 
     requestAnimationFrame(() => {
       loadScript('./assets/matter.min.js', 'matter')
-        .then(() => loadScript('./assets/effects-selected.js?v=20260717-04', 'selected'))
+        .then(() => loadScript('./assets/effects-selected.js?v=20260929-01', 'selected'))
         .catch((error) => console.error('[effects] failed to initialize', error));
     });
   }
 
-  differences = [
-    { n: '01', title: 'Sem distrações visuais', body: 'Nenhum elemento decorativo compete com a informação que você precisa encontrar rápido.' },
-    { n: '02', title: 'Funções avançadas para leigos e experts', body: 'Independentemente do seu nível de conhecimento sobre o Notion, tudo que você precisa fica em fácil alcance e com uso intuitivo.' },
-    { n: '03', title: 'Uma página, várias áreas', body: 'A mesma página serve para diferentes áreas da vida pela integração de bases de dados, reduzindo a necessidade de criar várias estruturas para o mesmo assunto.' },
-    { n: '04', title: 'Alta performance, interpretação rápida', body: 'Contagens regressivas, análises com insights de resultados, modelos prontos, criação automática de páginas e visualização funcional das propriedades principais.' },
-    { n: '05', title: 'Decisões baseadas em dados', body: 'Através dos mostruários, você consegue ter insights sobre vida pessoal, trabalho, estudos e projetos.' },
-    { n: '06', title: 'Estrutura legível por IA', body: 'Organização pensada para Claude e ChatGPT inspecionarem sem confundir dados, reduzindo respostas genéricas ou inventadas.' },
-  ];
-
-  impulses = [
-    'Transformar a teoria em prática',
-    'Revisar planos e calcular rotas sempre que precisar',
-    'Mudar suas prioridades de vida com consciência',
-    'Ter constância no cuidado com sua saúde física e mental',
-  ];
-
-  featureData = [
-    { label: 'Branding pessoal', items: [
-      { term: 'Aspirações', desc: 'Reúna seus principais interesses e tenha um histórico de tudo que aprende ou explora.' },
-      { term: 'Estilo pessoal', desc: 'Seu guarda-roupa registrado e planejado.' },
-      { term: 'Compras conscientes', desc: 'Sistema de investimento consciente com análise antes da compra.' },
-    ], quote: 'Ótimo para planejar o visual e as peças que vai comprar.', quoteBy: 'S. P. A. — 25 de maio de 2025' },
-    { label: 'Vida pessoal', items: [
-      { term: 'Favoritos', desc: 'Tudo que você mais gosta em um só lugar para explorar conhecimentos, desenvolver ideias ou salvar recomendações.' },
-      { term: 'Lugares', desc: 'Planeje visitar lugares novos, avalie os que conheceu e organize viagens.' },
-      { term: 'Banco de ideias', desc: 'Espaço para capturar ideias antes que elas se percam.' },
-      { term: 'Textos pessoais', desc: 'Registro de escrita pessoal para se expressar, inspirar projetos ou observar suas emoções.' },
-    ] },
-    { label: 'Saúde mental e física', items: [
-      { term: 'Hábitos e autocuidado', desc: 'Apenas o essencial para ser saudável, com liberdade para customizar o que for mais importante na sua rotina.' },
-      { term: 'Diário guiado', desc: 'Registro estruturado para observar dias, acontecimentos, emoções e padrões.' },
-      { term: 'Cápsula do tempo', desc: 'Mensagens da sua eu do passado para a eu do presente ou do futuro. Receba a carta quando o dia chegar.' },
-      { term: 'Academia', desc: 'Planeje seu treino e acompanhe seu progresso.' },
-    ] },
-    { label: 'Trabalho e projetos', items: [
-      { term: 'Administração de demandas', desc: 'Gerencie clientes, serviços, demandas e tarefas em uma estrutura funcional.' },
-      { term: 'Projetos', desc: 'Organize ideias, etapas, entregas e tarefas com liberdade criativa para dar vida ao que você quer construir.' },
-    ] },
-    { label: 'Tarefas de rotina', items: [
-      { term: 'Projetos e trabalho', desc: 'Tarefas recorrentes com contagem regressiva de prazo e criação automática de subtarefa.' },
-      { term: 'Eventos', desc: 'Planejador de looks e gerenciamento de tarefas relacionadas ao evento.' },
-    ], quote: 'Gostei da disposição e da contagem de dias restantes.', quoteBy: 'Felipe S. — 26 de fevereiro de 2025' },
-    { label: 'Casa', items: [
-      { term: 'Planejamento do lar', desc: 'Tarefas e decoração.' },
-      { term: 'Organização de mudança', desc: 'Todas as etapas com progresso.' },
-    ], quote: 'Nossa isso é perfeito, obrigada por isso. Meu sonho de menina.', quoteBy: 'Nathalia — 19 de junho de 2025' },
-    { label: 'Metas anuais e de vida', items: [
-      { term: 'Controle de subtarefas', desc: 'O passo a passo que você precisa para saber para onde está indo.' },
-      { term: 'Sistema de recompensa para metas', desc: 'Motivação constante durante todo o processo.' },
-    ] },
-    { label: 'Estudo', items: [
-      { term: 'Biblioteca', desc: 'Com autores, gêneros, séries pré-cadastradas e relatórios de leitura.' },
-      { term: 'Cursos', desc: 'Com matérias, módulos, demandas, tarefas, leituras e redação científica.' },
-    ] },
-  ];
-
-  testimonials = [
-    { text: 'Modelo de fácil acesso e prático, tudo separado por temas bem organizado. Parabéns.', name: 'Leticia M.', date: '22 de julho de 2025' },
-    { text: 'É um modelo bonito, bem intuitivo de se usar e funcional, estou adaptando para usar no controle de leituras do meu projeto de IC e está sendo bem satisfatório.', name: 'Giulia V. S.', date: '18 de junho de 2026' },
-    { text: 'Parabéns pelo seu empenho em auxiliar a comunidade de pesquisa e estudo. Bora estudar galera.', name: 'Marcelo M.', date: '8 de maio de 2026' },
-    { text: 'Abalou muito a querida que fez esse template. Vou usar pra organizar minhas leituras do mestrado e meus escritos.', name: 'Leticia B.', date: '18 de janeiro de 2026' },
-    { text: 'Muito prático e funcional. Deu para organizar minhas leituras.', name: 'Josiane S.', date: '1 de fevereiro de 2025' },
-  ];
-
-  adhd = [
-    { icon: '☰', pre: '', bold: 'Organização por cores', post: ' funciona como gatilho visual para encontrar informações de forma mais intuitiva. Sem poluição visual, o planner usa as próprias capas de páginas como decoração.' },
-    { icon: '▤', pre: '', bold: 'Hub de tarefas', post: ' categorizado pela própria ação a ser feita, facilitando a tomada de decisão na rotina. Você pode personalizar as frases, reorganizar arrastando páginas ou usar sem categorização.' },
-    { icon: '◷', pre: 'Para quem tem dificuldade com percepção interna de tempo, datas futuras parecem distantes até virarem urgência. As ', bold: 'contagens regressivas', post: ' reduzem essa dependência.' },
-    { icon: '▦', pre: '', bold: 'Status', post: ' evitam a sensação de que está tudo parado. Ver uma tarefa arquivada traz a certeza de que intencionalmente não foi realizada, não por distrações ou perda de prazos.' },
-    { icon: '✓', pre: '', bold: 'Hábitos', post: ' foca em elementos físicos e mentais que impactam diretamente concentração, regulação emocional e capacidade de iniciar tarefas.' },
-    { icon: '✎', pre: '', bold: 'Diário guiado', post: ' é autorregulação na prática. Registrar experiências ajuda a perceber ciclos que a memória emocional do momento pode distorcer.' },
-    { icon: '✉', pre: 'A ', bold: 'cápsula do tempo', post: ' e os textos pessoais preservam pensamentos, lemas e fases da própria identidade. Ter registros próprios facilita lembrar decisões e valores.' },
-    { icon: '⛁', pre: 'O ', bold: 'planejamento de compras', post: ' com análise de motivos ajuda a pausar antes da decisão, útil para prevenir compras impulsivas feitas no calor do interesse.' },
-  ];
-
   renderVals() {
-    const open = this.state.open;
     return {
-      differences: this.differences,
-      impulses: this.impulses,
-      testimonials: this.testimonials,
-      adhd: this.adhd,
       menuOpen: this.state.menuOpen,
       menuSign: this.state.menuOpen ? '✕' : '☰',
       toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
       closeMenu: () => this.setState({ menuOpen: false }),
-      features: this.featureData.map((f, i) => ({
-        label: f.label,
-        items: f.items,
-        isOpen: i === open,
-        sign: i === open ? '−' : '+',
-        hasQuote: i === open && !!f.quote,
-        quote: f.quote ? '“' + f.quote + '”' : '',
-        quoteBy: f.quoteBy || '',
-        toggle: () => this.setState(s => ({ open: s.open === i ? -1 : i })),
-      })),
     };
   }
 }
